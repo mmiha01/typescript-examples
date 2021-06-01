@@ -3,3 +3,6 @@ function helloWorld() {
 }
 
 helloWorld();
+
+// 1. Using interface values
+// 2. Utilities
