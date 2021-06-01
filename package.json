@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx tsc --watch",
-    "format": "npx prettier --write .",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
