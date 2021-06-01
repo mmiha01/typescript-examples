@@ -6,7 +6,6 @@
   "scripts": {
     "start": "npx tsc --watch",
     "format": "npx prettier --write .",
-    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
