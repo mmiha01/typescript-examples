@@ -126,3 +126,19 @@ const extracted: Extracted = null; // would throw error
     bar: 200,
   };
 })();
+
+// 8. Record - keys matched with value
+
+// "manual" way
+const foo1: { [K in "foo" | "bar"]: string } = { foo: "123", bar: "123" };
+
+// record way
+const foo2: Record<"foo" | "bar", string> = { foo: "123", bar: "123" };
+
+// We can use "keyof" in combination
+const foo3: Record<keyof Product, number> = {
+  manufacturer: 123,
+  model: 4,
+  date: 2,
+  additionalNotes: 400,
+};
