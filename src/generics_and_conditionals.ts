@@ -21,6 +21,16 @@ type FalseyValues = 0 | "" | false | null | undefined;
     return input.filter(isNotFalsy);
   }
 
+  /*
+    This won't work because "dirtyArray" can be changed at any point before going to the clean array
+    const dirtyArray = [1, 2, 3, null, false, "", undefined];
+    const cleanArray = clearArray(dirtyArray);
+
+    Can be solved by "locking" the the array into "const / readonly" (see misc.ts)
+    const dirtyArray = [1, 2, 3, null, false, "", undefined] as const;
+    Notice: Would need to change clearArray input type to allow readonly too
+  */
+
   const cleanArray = clearArray([1, 2, 3, null, false, "", undefined]);
 
   takesNumbers(cleanArray);

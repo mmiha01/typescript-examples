@@ -3,6 +3,7 @@
 const readonlyArray = [1, 2, 3, 4] as const;
 
 // readonlyArray.reverse()  // won't work
+// readonlyArray[0] = 100 // won't work either
 
 const readOnlyObject = { foo: "bar" } as const;
 
@@ -11,10 +12,10 @@ const readOnlyObject = { foo: "bar" } as const;
 // Tuples
 const tupple1: [number, string] = [1, "foo bar"];
 const tupple2: [...number[], string] = [1, 2, 3, 4, "foo bar"];
-// const tupple2: [...number[], string, ...number[]] = [1,2,3,4, 'foo bar'] // won't work
+// const tupple4: [...number[], string, ...number[]] = [1,2,3,4, 'foo bar'] // won't work
 const tupple3: [number, string, ...number[]] = [1, "foo bar"]; // optional numbers
 
-// Whole objects can go to partial
+// Whole objects can go to picked ones
 interface User {
   firstName: string;
   lastName: string;
@@ -49,7 +50,7 @@ enum Actions {
 // Can use methods like:
 Object.keys(Actions);
 
-// "Stripped out at compile time"
+// Stripped out at compile time
 const enum OtherActions {
   Update = "Update",
 }

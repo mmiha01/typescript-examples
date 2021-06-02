@@ -22,7 +22,7 @@ const pickedProduct: PickedProduct = {
   manufacturer: "John Doe",
 };
 
-// Possible got'cha moment - Pick also inherit "optionality"
+// Possible got'cha moment - Pick also inherits "optionality"
 function sendMail(to: string, content: string) {}
 
 function sendAdditionalNotesToManufacturer({
@@ -38,7 +38,7 @@ function sendAdditionalNotesToManufacturer({
 
 sendAdditionalNotesToManufacturer({ manufacturer: "somebody" }); // Notice, "additionalNotes" is never passed and no error is raised!
 
-// Firt solution: use indexing
+// Solution: use indexing
 function _sendAdditionalNotesToManufacturer({
   manufacturer,
   additionalNotes,
@@ -136,9 +136,9 @@ const foo1: { [K in "foo" | "bar"]: string } = { foo: "123", bar: "123" };
 const foo2: Record<"foo" | "bar", string> = { foo: "123", bar: "123" };
 
 // We can use "keyof" in combination
-const foo3: Record<keyof Product, number> = {
-  manufacturer: 123,
-  model: 4,
-  date: 2,
-  additionalNotes: 400,
+const productFlags: Record<keyof Product, boolean> = {
+  manufacturer: true,
+  model: false,
+  date: false,
+  additionalNotes: true,
 };
